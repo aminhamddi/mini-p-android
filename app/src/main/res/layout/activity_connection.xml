@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ConnectionActivity">
 
-</resources>
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:contentDescription="App Logo"
+        android:src="@drawable/student"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/accountNameLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appLogo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/accountNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Account Name"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountNameLayout"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Connect"
+        android:backgroundTint="@color/lightBlue2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
